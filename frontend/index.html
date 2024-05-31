@@ -229,7 +229,53 @@ main {
   border: 1px solid #ccc; /* Add a border */
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a shadow */
 }
-   
+/* Base styles for .news */
+.news {
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 800px; /* Set a max-width for better control */
+  margin: 20px auto; /* Center the section */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.news img{
+  width:75%;
+}
+
+/* Styles for .news-adjust on hover */
+.news-adjust {
+  background-color: #e0e0e0;
+  transform: scale(1.02); /* Slightly reduce the scale effect */
+}
+
+/* Dark mode styles */
+.dark-mode .news {
+  background-color: #2c2c2c;
+  color: #f4f4f4;
+}
+
+/* Styles for .news-adjust in dark mode */
+.dark-mode .news.news-adjust {
+  background-color: #444;
+}
+
+/* Additional media queries for responsiveness */
+@media (max-width: 768px) {
+  .news {
+    padding: 15px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .news {
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+
   </style>
   <!-- <div class="navbar">
       <a href="#AMD" class="AMD">AMD</a>
@@ -322,14 +368,38 @@ main {
           <img src="images/nvidia.jpg" />
           </div>
         </div>
-        <script>
+         <div class="news">
+  <div class="intel">
+    <img src="images/intels.png" />
+    <h1><strong>      Intel Analysts Optimistic Despite Industry Challenges on Intel</strong></h1>
+    <p>Today, Intel (INTC) stock experienced a modest increase, closing at $75.32, up 0.78% from the previous trading day. This uptick follows the company's recent announcement of a partnership with a prominent AI firm, which is anticipated to propel the advancement of cutting-edge AI technologies. Analysts view Intel's future with optimism, highlighting its robust position in the semiconductor sector and ongoing expansion into emerging technologies like AI and autonomous driving. Despite this positive trend, some investors remain wary of global chip shortages and potential regulatory hurdles. Nonetheless, Intel's strategic initiatives and solid financial standing are expected to help it navigate these challenges and drive future growth. Overall, Intel's resilience and potential for further expansion make it a noteworthy player in the tech industry, with investors advised to closely monitor its developments.</p>
+  </div>
+  <div class="amd">
+    <img src="images/amds.png" />
+    <h1><strong>AMD Stock Surges on Next-Gen Processor Launch, Analysts Bullish Despite Supply Chain Concerns</strong> </h1>
+    <p>AMD (Advanced Micro Devices) experienced a notable increase in its stock value today, closing at $140.65, up 1.23% from the previous trading day. This positive movement follows the company's recent unveiling of its next-generation processors, which have garnered significant attention for their impressive performance and efficiency. Analysts are bullish on AMD's prospects, citing its strong lineup of products and its ability to compete effectively with industry giants like Intel and Nvidia. The company's focus on innovation and its growing market share in key sectors such as gaming and data centers are seen as positive indicators for future growth. Despite today's gains, some investors remain cautious due to ongoing supply chain challenges and macroeconomic uncertainties. However, many analysts believe that AMD's strong product portfolio and strategic initiatives will help it overcome these challenges and drive further growth in the future. Overall, AMD continues to be a key player in the semiconductor industry, with its stock showing resilience and potential for further appreciation in the coming months. Investors are advised to monitor AMD's developments closely as it continues to innovate and expand its market presence.</p>
+  </div>
+  <div class="asus">
+    <img src="images/asuss.png" />
+    <h1><strong>Asus Stock Soars 15% on Strong Q1 Earnings, Driven by High Demand for Gaming Laptops and Motherboards</strong></h1>
+    <p>Taipei, May 30, 2024 - Asus (ASUS: TPE) experienced a remarkable surge in its stock price today, rising by 15% to close at NT$400.25 per share, following the release of a strong Q1 earnings report. The Taiwanese tech giant reported a net profit of NT$15 billion for the first quarter of 2024, a significant increase from NT$10 billion in the same period last year, with revenue also rising to NT$80 billion from NT$65 billion year-over-year. This robust performance has been attributed to the growing demand for Asus's gaming laptops and motherboards, particularly in North America and Europe. CEO Samson Hu expressed optimism, citing the positive reception of the new ROG gaming series and upcoming product lines. Analysts have noted that Asus's strategic partnerships and investments in emerging technologies like AI and 5G have positioned the company for sustained growth. Investors reacted positively, with trading volumes surging, and many experts believe there is still room for further growth. In related news, Asus announced plans to expand its manufacturing facilities in Taiwan and increase its workforce to meet rising global demand, enhancing production capacity and supply chain efficiency.</p>
+  </div>
+  <div class="nvidia">
+    <img src="images/nvidias.png" />
+    <h1><strong></h1>
+    <p>Nvidia saw a slight decrease in its stock value today, closing at $285.40, down 0.45% from the previous trading day. This slight dip comes after the company's recent announcement of a delay in the release of its next-generation graphics cards, which has led to some investor uncertainty. Despite today's decrease, analysts remain optimistic about Nvidia's future, citing its strong position in the GPU market and its continued expansion into new growth areas such as AI and autonomous driving. The company's recent acquisition of ARM is also seen as a positive move that could further solidify its market leadership. However, some investors are cautious due to potential regulatory challenges surrounding the ARM acquisition and ongoing global supply chain disruptions. Nonetheless, many analysts believe that Nvidia's strong fundamentals and strategic initiatives will help it navigate these challenges and drive future growth. Overall, Nvidia remains a key player in the tech industry, with its stock showing resilience despite today's dip. Investors are advised to closely monitor Nvidia's developments as it continues to innovate and expand its </p>
+  </div>
+</div>
+<script>
           document.querySelector('.navbar').addEventListener('mouseover', function() {
-            document.querySelector('.secondlogos').classList.add('carousel-adjust');
-          });
-        
-          document.querySelector('.navbar').addEventListener('mouseout', function() {
-            document.querySelector('.secondlogos').classList.remove('carousel-adjust');
-          });
+    document.querySelector('.secondlogos').classList.add('carousel-adjust');
+    document.querySelector('.news').classList.add('news-adjust');
+  });
+
+  document.querySelector('.navbar').addEventListener('mouseout', function() {
+    document.querySelector('.secondlogos').classList.remove('carousel-adjust');
+    document.querySelector('.news').classList.remove('news-adjust');
+  });
           document.addEventListener('DOMContentLoaded', function() {
     const toggleButton = document.getElementById('darkmode');
     toggleButton.addEventListener('click', function() {
